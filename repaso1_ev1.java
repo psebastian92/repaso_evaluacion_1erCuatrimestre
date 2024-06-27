@@ -27,22 +27,24 @@ public class repaso1_ev1 {
 		List<Integer> DNIs = new ArrayList<>();
 		List<String> apellidos = new ArrayList<>();
 
-		// Relleno la lista de DNI.
-		for (int i = 0; i < apellidos.size(); i++) {
+		// Definir la cantidad total de datos de personas.
+
+		System.out.println("Cuantas personas registrara?");
+		int cantidadPersonas = entrada.nextInt();
+
+		for (int i = 0; i < cantidadPersonas; i++) {
+			// Relleno la lista de DNI.
 			System.out.println("Ingrese un numero de DNI: ");
 			DNIs.add(entrada.nextInt());
-		}
-
-		// Relleno la lista de apellidos.
-		for (int i = 0; i < apellidos.size(); i++) {
+			// Relleno la lista de apellidos.
 			System.out.println("Ingrese el apellido del DNI numero " + (i + 1) + ":");
 			apellidos.add(entrada.next());
 		}
 
 		// Paso 2: Ordenar listas utilizando el algoritmo de ordenamiento burbuja
-		int n = DNIs.size();
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = 0; j < n - i - 1; j++) {
+
+		for (int i = 0; i < cantidadPersonas - 1; i++) {
+			for (int j = 0; j < cantidadPersonas - i - 1; j++) {
 				if (DNIs.get(j) > DNIs.get(j + 1)) {
 					// Intercambiar DNI
 					int tempDNI = DNIs.get(j);
@@ -58,13 +60,10 @@ public class repaso1_ev1 {
 		}
 
 		// Paso 3: Mostrar las listas ordenadas
+		System.out.println("--------------------------------------"); // Estos guiones se agregan para ver con mas claridad en pantalla.
 		System.out.println("Lista de DNI ordenada:");
 		for (int i = 0; i < DNIs.size(); i++) {
-			System.out.println("El DNI " + (i + 1) + " es: " + DNIs.get(i));
-		}
-		System.out.println("Lista de apellidos ordenada:");
-		for (int i = 0; i < apellidos.size(); i++) {
-			System.out.println("Apellido " + (i + 1) + ": " + apellidos.get(i));
+			System.out.println("El DNI " + (i + 1) + " es: " + DNIs.get(i) + " perteneciente a: " + apellidos.get(i));
 		}
 
 		// Paso 4: Buscar un DNI ingresado por el usuario
@@ -92,6 +91,8 @@ public class repaso1_ev1 {
 						DNIs.remove(i);
 						apellidos.remove(i);
 						System.out.println("DNI eliminado correctamente.");
+						System.out.println("Lista de DNI" + DNIs);
+						System.out.println("Lista de apellidos" + apellidos);
 						break;
 					case 2:
 						// Modificar DNI, Apellido o ambos
@@ -111,6 +112,8 @@ public class repaso1_ev1 {
 							apellidos.set(i, nuevoApellido);
 						}
 						System.out.println("Modificacion realizada correctamente.");
+						System.out.println("Lista de DNI: " + DNIs); // DNIs es el nombre de la lista
+						System.out.println("Lista de apellidos: " + apellidos); // apellidos es el nombre de la lista
 						break;
 					case 3:
 						System.out.println("Saliendo del programa.");
@@ -135,7 +138,7 @@ public class repaso1_ev1 {
 				buscarOtro = false;
 			}
 		}
-
-		entrada.close();
+		System.out.println("------------------------------");
+		System.out.println("FIN DEL PROGRAMA");
 	}
 }
