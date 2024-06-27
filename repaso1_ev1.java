@@ -1,3 +1,16 @@
+/*
+ * Armá el siguiente algoritmo:
+1. Solicitá al usuario que ingrese una lista de números de DNI.
+2. Generá ahora, otra lista en la cual se ingrese el apellido de cada persona. Cada posición (0, 1, 2, etc.) debe corresponderse con la lista de DNI. Ejemplo: Si González está en la posición 0 de su array, su DNI deberá estar en la posición 0 del array de los DNI.
+3. Utiliza el algoritmo de ordenamiento burbuja para ordenar las listas según DNI en orden ascendente (desde el menor hacia el mayor).
+4. Mostrá ambas listas ordenada en la consola.
+5. Pedile a un usuario que busque un número de DNI. Si el número es hallado, mostrarlo en pantalla junto con el apellido de la persona correspondiente. Si no, indicar que el número de DNI no existe en este programa.
+6. Al hallar la persona, ofrecerle al usuario si desea: 1. Eliminar, 2. Modificar, 3. Salir del programa.
+7. Si desea eliminar, borrá el elemento encontrado.
+8. Si desea modificar, hay que consultarle al usuario si desea modificar DNI, Nombre, o ambos. La forma de elegir estas opciones, la elegís vos como programador.
+9. Al terminar las operaciones anteriores, consultale al usuario si desea buscar otro DNI. Si la respuesta es correcta, debe repetirse el programa desde el punto 5. 
+ * */
+
 package repaso_ev;
 
 import java.util.ArrayList;

@@ -1,3 +1,31 @@
+/*
+ * Generá el algoritmo para las siguientes condiciones:
+Se tienen tres arryas de tres propietarios con los siguientes datos:
+Se tiene un array con los apellidos de los propietarios.
+Se debe tener además, un  array con su edad.
+Un último array con su numero de DNI.
+Estos tres arrays, deben crearse por PROGRAMA.
+Se poseen también cuatro arryas (también por programa) para  tres automóviles automóviles, con los siguientes datos:
+Array con la marca del vehículo: 
+
+BMW, Peugeot y Renault.
+Array con el nombre del modelo: Z3, 208 y Sandero.
+Array con el año del vehículo: 2021, 2018, 2022.
+Array con la patente de cada auto: AD178JK, AD200RS, AD202VW.
+Cada posición en el array, es importante para relacionarse con el resto de los 
+
+arrays . Por ejemplo, el segundo auto es: Peugeot 208, año 2018, patente AD200RS.
+El objetivo, es crear un algoritmo que muestre en pantalla únicamente a los modelos con año superior a 2020, y además donde el conductor tenga mas de 25 años.
+
+Ejemplo: "El auto BMW Z3 del año 2021, patente AD178JK, pertenece a Muñoz, que tiene 30 años, y su DNI es 54789534".
+
+Por último, preguntarle al usuario si desea modificar algún elemento. Para ello, mostrale todas las patentes disponibles, y solicitale que ingrese el número de patente del auto a modificar (1. AD178JK, 2. AD200RS, 3. AD202VW) . Preguntar qué desea cambiar (apellido, edad, dni, marca, modelo, año, o patente).  Podés armar otras opciones mostradas en el syso (1. Apellido, 2. Edad, 3. DNI, etc.), para facilitar la búsqueda. 
+
+Finalmente, volver a mostrar en pantalla todos los datos.  
+
+Ejemplo: "El auto BMW Z3 del año 2021, patente AD178JK, pertenece a Muñoz, que tiene 30 años, y su DNI es 54789534".
+ * */
+
 package repaso_ev;
 
 import java.util.Scanner;
@@ -21,8 +49,8 @@ public class repaso2_ev {
 		for (int i = 0; i < apellido.length; i++) {
 			// Coloco en el IF las condiciones solicitadas.
 			if (anio[i] > 2020 && edad[i] > 25) {
-				System.out.println("El auto " + marca[i] + " " + modelo[i] + " con patente " + patente[i]
-						+ ", año: " + anio[i] + ", pertenece a: " + apellido[i] + " con DNI: " + DNI[i]);
+				System.out.println("El auto " + marca[i] + " " + modelo[i] + " con patente " + patente[i] + ", año: "
+						+ anio[i] + ", pertenece a: " + apellido[i] + " con DNI: " + DNI[i]);
 
 			}
 		}
@@ -94,8 +122,8 @@ public class repaso2_ev {
 				}
 
 				System.out.println("Registro completo modificado: ");
-				System.out.println("El auto " + marca[i] + " " + modelo[i] + " con patente " + patente[i]
-						+ ", año: " + anio[i] + ", pertenece a: " + apellido[i] + " con DNI: " + DNI[i]);
+				System.out.println("El auto " + marca[i] + " " + modelo[i] + " con patente " + patente[i] + ", año: "
+						+ anio[i] + ", pertenece a: " + apellido[i] + " con DNI: " + DNI[i]);
 			}
 		}
 
