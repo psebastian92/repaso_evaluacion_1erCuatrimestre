@@ -3,7 +3,7 @@
 1. Solicitá al usuario que ingrese una lista de números de DNI.
 2. Generá ahora, otra lista en la cual se ingrese el apellido de cada persona. Cada posición (0, 1, 2, etc.) debe corresponderse con la lista de DNI. Ejemplo: Si González está en la posición 0 de su array, su DNI deberá estar en la posición 0 del array de los DNI.
 3. Utiliza el algoritmo de ordenamiento burbuja para ordenar las listas según DNI en orden ascendente (desde el menor hacia el mayor).
-4. Mostrá ambas listas ordenada en la consola.
+4. Mostrá ambas listas ordenadas en la consola.
 5. Pedile a un usuario que busque un número de DNI. Si el número es hallado, mostrarlo en pantalla junto con el apellido de la persona correspondiente. Si no, indicar que el número de DNI no existe en este programa.
 6. Al hallar la persona, ofrecerle al usuario si desea: 1. Eliminar, 2. Modificar, 3. Salir del programa.
 7. Si desea eliminar, borrá el elemento encontrado.
@@ -23,7 +23,7 @@ public class repaso1_ev1 {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 
-		// Paso 1: Crear listas para almacenar DNI y apellidos
+		// Paso 1 y 2: Crear listas para almacenar DNI y apellidos
 		List<Integer> DNIs = new ArrayList<>();
 		List<String> apellidos = new ArrayList<>();
 
@@ -32,6 +32,7 @@ public class repaso1_ev1 {
 		System.out.println("Cuantas personas registrara?");
 		int cantidadPersonas = entrada.nextInt();
 
+	
 		for (int i = 0; i < cantidadPersonas; i++) {
 			// Relleno la lista de DNI.
 			System.out.println("Ingrese un numero de DNI: ");
@@ -41,7 +42,7 @@ public class repaso1_ev1 {
 			apellidos.add(entrada.next());
 		}
 
-		// Paso 2: Ordenar listas utilizando el algoritmo de ordenamiento burbuja
+		// Paso 3: Ordenar listas utilizando el algoritmo de ordenamiento burbuja
 
 		for (int i = 0; i < cantidadPersonas - 1; i++) {
 			for (int j = 0; j < cantidadPersonas - i - 1; j++) {
@@ -59,16 +60,17 @@ public class repaso1_ev1 {
 			}
 		}
 
-		// Paso 3: Mostrar las listas ordenadas
+		// Paso 4: Mostrar las listas ordenadas
 		System.out.println("--------------------------------------"); // Estos guiones se agregan para ver con mas claridad en pantalla.
+	
 		System.out.println("Lista de DNI ordenada:");
 		for (int i = 0; i < DNIs.size(); i++) {
-			System.out.println("El DNI " + (i + 1) + " es: " + DNIs.get(i) + " perteneciente a: " + apellidos.get(i));
+			System.out.println("El DNI " + (i + 1) + " es: " + DNIs.get(i) + " perteneciente a: " + apellidos.get(i) ); 
 		}
 
-		// Paso 4: Buscar un DNI ingresado por el usuario
+		// Paso 5: Buscar un DNI ingresado por el usuario
 		boolean buscarOtro = true;
-		while (buscarOtro) {
+		while (buscarOtro == true) {
 			System.out.println("\nIngrese un numero de DNI a buscar: ");
 			int DNI_buscado = entrada.nextInt();
 
@@ -78,7 +80,7 @@ public class repaso1_ev1 {
 					System.out.println("El DNI " + DNI_buscado + " pertenece a: " + apellidos.get(i));
 					encontrado = true;
 
-					// Paso 5: Ofrecer opciones al usuario
+					// Paso 6: Ofrecer opciones al usuario
 					System.out.println("Que desea hacer?");
 					System.out.println("1. Eliminar");
 					System.out.println("2. Modificar");
@@ -127,14 +129,14 @@ public class repaso1_ev1 {
 				}
 			}
 
-			if (!encontrado) {
+			if (encontrado == false) {
 				System.out.println("El DNI buscado no existe en este programa.");
 			}
 
 			// Preguntar si desea buscar otro DNI
-			System.out.println("Desea buscar otro DNI? (S/N)");
+			System.out.println("Desea salir? (S/N)");
 			String respuesta = entrada.next();
-			if (!respuesta.equalsIgnoreCase("S")) {
+			if (respuesta.equalsIgnoreCase("S")) {
 				buscarOtro = false;
 			}
 		}
