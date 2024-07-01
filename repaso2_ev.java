@@ -77,10 +77,10 @@ public class repaso2_ev {
 
 		for (int i = 0; i < patente.length; i++) {
 
-			if (OpcionPatenteIngresada == i + 1) { // Buscamos la patente ingresada.
-													// Sumamos 1 a "i", porque las opciones comienzan de 1, y los arrays
-													// de 0.
+			if (OpcionPatenteIngresada == i + 1) { 
 
+				// i+1 porque en el for, i al comienzo vale 0, pero las opciones dadas no fueron 0, 1, y 2, si no mas bien, 1, 2 y 3.
+	
 				// A continuacion, se van a armar estructuras if - else if segun la opcion
 				// ingresada. Podría armarse tambien con switch.
 
